@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .image {
+        opacity: 1;
+        display: block;
+        width: 10%;
+        height: auto;
+        transition: .1s ease;
+        backface-visibility: hidden;
+    }
+    .image:hover {
+        opacity: 0.4;
+    }
+
+</style>
+    <title>Hello Manim</title>
+
+</head>
+
 <body>
 
 <div style="text-align:center">
@@ -19,7 +40,7 @@
     for (let key of Object.keys(jsonData)) {
         document.writeln('key: ' + key +  ' &nbsp &nbsp value: ' + jsonData[key])
         document.write('<BR/>')
-        document.write('<img src="' + key + '" alt= "'+jsonData[key]+'" onclick="myFunction(this);" > ');
+        document.write('<img src="' + key + '" alt= "'+jsonData[key]+'" onclick="myFunction(this); " class="image"> ');
         document.write('<BR/>')
     }
 
