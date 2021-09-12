@@ -1,60 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial;
-        }
-
-        /* The grid: Four equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 20%;
-            padding: 10px;
-        }
-
-        /* Style the images inside the grid */
-        .column img {
-            opacity: 1;
-            cursor: pointer;
-        }
-
-        .column img:hover {
-            opacity: 0.8;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* The expanding image container */
-        .container {
-            position: relative;
-            display: none;
-        }
-
-
-        /* Closable button inside the expanded image */
-        .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: white;
-            font-size: 35px;
-            cursor: pointer;
-        }
-    </style>
-    <title>ManimCollection</title>
-</head>
+<html lang="en">
 <body>
 
 <div style="text-align:center">
@@ -63,40 +8,29 @@
     <a href="https://github.com/kolibril13/mobject-gallery">https://github.com/kolibril13/mobject-gallery</a>
 
 </div>
+<p id="info_field"> Here will come the text that you copied.</p>
 
-<!-- The four columns -->
-<div class="row">
-    <div class="column">
-        <img src="img_dot.png" alt="dot = Dot()" style="width:80px" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-        <img src="img_circle.png" alt="circle = Circle()" style="width:80px" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-        <img src="img_square.png" alt="sq = Square()" style="width:80px" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-        <img src="img_line.png" alt="line = Line()" style="width:80px" onclick="myFunction(this);">
-    </div>
-</div>
-
-<div class="container">
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-    <img id="expandedImg" style="width:100%">
-    <div id="imgtext"></div>
-</div>
-<p id="demo"></p>
 
 <script>
-    function myFunction(imgs) {
-        var expandImg = document.getElementById("expandedImg");
-        var imgText = document.getElementById("imgtext");
-       // expandImg.src = imgs.src;
-       // expandImg.parentElement.style.display = "block";
-        var name= imgs.alt
-        document.getElementById("demo").innerHTML= "'" +  name + "'" + " is now copied to clipboard"
-        navigator.clipboard.writeText(name);
+    var request = new XMLHttpRequest();
+    request.open("GET","name_snippet_pairs.json", false);
+    request.send(null);
+    var jsonData = JSON.parse(request.responseText);
+    for (let key of Object.keys(jsonData)) {
+        document.writeln('key: ' + key +  ' &nbsp &nbsp value: ' + jsonData[key])
+        document.write('<BR/>')
+        document.write('<img src="' + key + '" alt= "'+jsonData[key]+'" onclick="myFunction(this);" > ');
+        document.write('<BR/>')
     }
+
+</script>
+
+<script> // add copy button to images
+function myFunction(imgs) {
+    var name = imgs.alt;
+    navigator.clipboard.writeText(name);
+    document.getElementById("info_field").innerHTML= "'" +  name + "'" + " is now copied to clipboard"
+}
 </script>
 
 </body>
