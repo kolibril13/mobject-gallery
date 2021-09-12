@@ -1,1 +1,1 @@
-{"basics_dot.png": "d = Dot(color = YELLOW)", "basics_circle.png": "circle = Circle(color= YELLOW)", "basics_square.png": "square = Square(color= YELLOW)", "basics_line.png": "line = Line(color= YELLOW)", "basics_star.png": "star = Star(color = YELLOW)"}
+{"basics01_dot.png": "d = Dot(color = YELLOW)", "basics02_circle.png": "circle = Circle(color= YELLOW)", "basics03_square.png": "square = Square(color= YELLOW)", "basics04_line.png": "line = Line(color= YELLOW)", "basics05_star.png": "star = Star(color = YELLOW)"}
