@@ -6,14 +6,28 @@
 <style>
     .image {
         opacity: 1;
-        display: block;
-        width: 10%;
+        display: inline-block;
+        border: 2px solid darkcyan;
+        width: 80px;
         height: auto;
+        margin: 1px;
         transition: .1s ease;
         backface-visibility: hidden;
+        border-radius: 8px;
     }
     .image:hover {
         opacity: 0.4;
+    }
+
+    .grid {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(3,80px);
+    }
+
+    div > div {
+        padding: 0;
+        background-color: #000;
     }
 
 </style>
@@ -32,27 +46,39 @@
 <p id="info_field"> Here will come the text that you copied.</p>
 
 
+<div class="grid">
+    <div><img src="basics01_dot.png"> </div>
+    <div><img src="basics02_circle.png"> </div>
+    <div><img src="basics03_square.png"> </div>
+    <div><img src="basics04_line.png"> </div>
+    <div><img src="basics05_star.png"> </div>
+</div>
+
+
 <script>
     var request = new XMLHttpRequest();
-    request.open("GET","name_snippet_pairs.json", false);
+    request.open("GET", "name_snippet_pairs.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
+
+
     for (let key of Object.keys(jsonData)) {
-        document.writeln('key: ' + key +  ' &nbsp &nbsp value: ' + jsonData[key])
-        document.write('<BR/>')
-        document.write('<img src="' + key + '" alt= "'+jsonData[key]+'" onclick="myFunction(this); " class="image"> ');
-        document.write('<BR/>')
+        document.writeln('key: ' + key + ' &nbsp &nbsp value: ' + jsonData[key])
+        document.writeln('<BR>')
+    }
+    document.writeln('<BR>')
+    for (let key of Object.keys(jsonData)) {
+        document.write(`<img src="${key}" alt= "${jsonData[key]}" onclick="myFunction(this);" class="image"> `);
     }
 
+    // add copy button to images
+    function myFunction(imgs) {
+        var name = imgs.alt;
+        navigator.clipboard.writeText(name);
+        document.getElementById("info_field").innerHTML = "'" + name + "'" + " is now copied to clipboard"
+    }
 </script>
 
-<script> // add copy button to images
-function myFunction(imgs) {
-    var name = imgs.alt;
-    navigator.clipboard.writeText(name);
-    document.getElementById("info_field").innerHTML= "'" +  name + "'" + " is now copied to clipboard"
-}
-</script>
 
 </body>
 </html>
