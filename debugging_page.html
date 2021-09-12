@@ -19,6 +19,16 @@
         opacity: 0.4;
     }
 
+    .grid {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(3,80px);
+    }
+
+    div > div {
+        padding: 0;
+        background-color: #000;
+    }
 
 </style>
     <title>Hello Manim</title>
@@ -30,12 +40,20 @@
 <div style="text-align:center">
     <h2>All manim Mobjects</h2>
     <a href="https://github.com/kolibril13/mobject-gallery">https://github.com/kolibril13/mobject-gallery</a>
-    <p><a href="debugging_page.html">Debugging Page</a></p>
+    <p><a href="index.html">Main Page</a></p>
     <p>Click on the images below to copy the code snippet:</p>
 
 </div>
 <p id="info_field"> Here will come the text that you copied.</p>
 
+
+<div class="grid">
+    <div><img src="basics01_dot.png"> </div>
+    <div><img src="basics02_circle.png"> </div>
+    <div><img src="basics03_square.png"> </div>
+    <div><img src="basics04_line.png"> </div>
+    <div><img src="basics05_star.png"> </div>
+</div>
 
 
 <script>
@@ -45,11 +63,15 @@
     var jsonData = JSON.parse(request.responseText);
 
 
-
+    for (let key of Object.keys(jsonData)) {
+        document.writeln('key: ' + key + ' &nbsp &nbsp value: ' + jsonData[key])
+        document.writeln('<BR>')
+    }
+    document.writeln('<BR>')
 
     document.writeln(' <h1>Basic Shapes</h1>')
     for (let key of Object.keys(jsonData)) {
-        document.write(`<img src="${key}" alt="${jsonData[key]}" onclick="myFunction(this);" class="image"> `);
+        document.write(`<img src="${key}" alt= "${jsonData[key]}" onclick="myFunction(this);" class="image"> `);
     }
     // add copy button to images
     function myFunction(imgs) {
