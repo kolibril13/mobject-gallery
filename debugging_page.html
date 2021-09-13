@@ -19,16 +19,6 @@
         opacity: 0.4;
     }
 
-    .grid {
-        display: grid;
-        grid-gap: 5px;
-        grid-template-columns: repeat(3,80px);
-    }
-
-    div > div {
-        padding: 0;
-        background-color: #000;
-    }
 
 </style>
     <title>Hello Manim</title>
@@ -71,13 +61,13 @@
 
     document.writeln(' <h1>Basic Shapes</h1>')
     for (let key of Object.keys(jsonData)) {
-        document.write(`<img src="${key}" alt= "${jsonData[key]}" onclick="myFunction(this);" class="image"> `);
+        document.write(`<img src='images/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
     }
     // add copy button to images
     function myFunction(imgs) {
         var name = imgs.alt;
-        navigator.clipboard.writeText(name);
         document.getElementById("info_field").innerHTML = "'" + name + "'" + " is now copied to clipboard"
+        navigator.clipboard.writeText(name);
     }
 </script>
 

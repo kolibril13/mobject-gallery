@@ -49,7 +49,7 @@
 
     document.writeln(' <h1>Basic Shapes</h1>')
     for (let key of Object.keys(jsonData)) {
-        document.write(`<img src="images/${key}" alt="${jsonData[key]}" onclick="myFunction(this);" class="image"> `);
+        document.write(`<img src='images/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
     }
     // add copy button to images
     function myFunction(imgs) {
