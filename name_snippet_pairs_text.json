@@ -1,0 +1,1 @@
+{"image000basics_Text.png": "mob = Text(\"Hello\", color=WHITE)", "image001text_Text.png": "mob = Text(\"Hello\", color=WHITE)", "image002text_MathTex.png": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\")<br>mob.set_color_by_tex(\"x\", YELLOW)"}
