@@ -1,5 +1,6 @@
 {
   "Mobjects_Text_000_Text.png": "mob = Text(\"Hello\", color=WHITE)",
-  "Mobjects_Text_001_MathTex.png": "mob = MathTex(r\"\\Psi(x)\", color=WHITE)",
-  "Mobjects_Text_002_MathTex2.png": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\") \nmob.set_color_by_tex(\"x\", YELLOW)"
+  "Mobjects_Text_001_Underline.png": "t = Tex(\"YES\")\nul = Underline(t, color=YELLOW)",
+  "Mobjects_Text_002_MathTex.png": "mob = MathTex(r\"\\Psi(x)\", color=WHITE)",
+  "Mobjects_Text_003_MathTex2.png": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\") \nmob.set_color_by_tex(\"x\", YELLOW)"
 }

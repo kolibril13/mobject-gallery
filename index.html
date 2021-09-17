@@ -10,6 +10,11 @@
     <script>hljs.initHighlightingOnLoad();</script>
 
     <style>
+    .div1 {
+        width: 600px;
+        height: 150px;
+        border: 0px solid blue;
+    }
     .image {
         opacity: 1;
         display: inline-block;
@@ -40,16 +45,16 @@
     <p>Click on the images below to copy the code snippet:</p>
 
 </div>
+<div class="div1">
+
+<br>
 
 <pre><code class="python"><p id="info_field"><b>Here will come the text that you copied.</b>
 class Example(Scene):
     def construct(self):
-        self.camera.background_color = "#ece6e2"
-        banner = ManimBanner(dark_theme=False)
-        self.add(banner)
-</p>
+        self.add(Dot(color=YELLOW)) </p>
 </code></pre>
-
+</div>
 
 
 <script>
@@ -69,7 +74,6 @@ class Example(Scene):
     for (let key of Object.keys(jsonData)) {
         document.write(`<img src='images/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
     }
-
 
 
 
