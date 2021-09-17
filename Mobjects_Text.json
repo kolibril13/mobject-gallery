@@ -4,5 +4,5 @@
   "Mobjects_Text_002_Underline.png": "t = Tex(\"YES\")\nul = Underline(t, color=YELLOW)",
   "Mobjects_Text_003_Bold.png": "mob = Text(\"NO\", color=YELLOW,weight=BOLD)",
   "Mobjects_Text_004_MathTex.png": "mob = MathTex(r\"\\Psi(x)\", color=WHITE)",
-  "Mobjects_Text_005_MathTex2.png": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\") \nmob.set_color_by_tex(\"x\", YELLOW)"
+  "Mobjects_Text_005_MathTex2.png": "\nmob = MathTex(r\"e^x\",substrings_to_isolate=\"x\")\nmob.set_color_by_tex(\"x\", YELLOW)\n"
 }
