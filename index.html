@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <style>
     .image {
         opacity: 1;
         display: inline-block;
@@ -34,7 +40,15 @@
     <p>Click on the images below to copy the code snippet:</p>
 
 </div>
-<p id="info_field"> Here will come the text that you copied.</p>
+
+<pre><code class="python"><p id="info_field"><b>Here will come the text that you copied.</b>
+class Example(Scene):
+    def construct(self):
+        self.camera.background_color = "#ece6e2"
+        banner = ManimBanner(dark_theme=False)
+        self.add(banner)
+</p>
+</code></pre>
 
 
 
@@ -64,10 +78,11 @@
     function myFunction(imgs) {
         var name = imgs.alt;
         navigator.clipboard.writeText(name);
-        document.getElementById("info_field").innerHTML = "'" + name + "'" + " is now copied to clipboard"
+        document.getElementById("info_field").innerHTML = name + " \n<b>is now copied to clipboard.</b>"
     }
 </script>
 
 
 </body>
 </html>
+
