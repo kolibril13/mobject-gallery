@@ -1,7 +1,7 @@
 {
-  "Mobjects_Text_000_Dot.png": "d = Dot(color = YELLOW)",
-  "Mobjects_Text_001_Circle.png": "mob = Circle(fill_opacity=1, fill_color= ORANGE, stroke_color=YELLOW)",
-  "Mobjects_Text_002_Annulus.png": "mob = Annulus(inner_radius=0.5, outer_radius=1.2,fill_color= DARK_BLUE, stroke_color=YELLOW, stroke_width=2)",
-  "Mobjects_Text_003_Sector.png": "mob = Sector(inner_radius=0.5, outer_radius=1.2,fill_color= DARK_BLUE, stroke_color=YELLOW, stroke_width=2)",
-  "Mobjects_Text_004_Arc.png": "mob= Arc(radius=1.3, start_angle=-PI/16, angle=PI,color= YELLOW)"
+  "Mobjects_Text_000_Text1.png": "mob = Text(\"Hello\", color=WHITE)",
+  "Mobjects_Text_001_Text2.png": "mob = Text(\"World\", color=YELLOW,slant=ITALIC)",
+  "Mobjects_Text_002_Underline.png": "t = Tex(\"YES\")\nul = Underline(t, color=YELLOW)",
+  "Mobjects_Text_003_MathTex.png": "mob = MathTex(r\"\\Psi(x)\", color=WHITE)",
+  "Mobjects_Text_004_MathTex2.png": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\") \nmob.set_color_by_tex(\"x\", YELLOW)"
 }
