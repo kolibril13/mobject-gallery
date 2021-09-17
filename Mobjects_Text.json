@@ -2,6 +2,7 @@
   "Mobjects_Text_000_Text1.png": "mob = Text(\"Hello\", color=WHITE)",
   "Mobjects_Text_001_Text2.png": "mob = Text(\"World\", color=YELLOW,slant=ITALIC)",
   "Mobjects_Text_002_Underline.png": "t = Tex(\"YES\")\nul = Underline(t, color=YELLOW)",
-  "Mobjects_Text_003_MathTex.png": "mob = MathTex(r\"\\Psi(x)\", color=WHITE)",
-  "Mobjects_Text_004_MathTex2.png": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\") \nmob.set_color_by_tex(\"x\", YELLOW)"
+  "Mobjects_Text_003_Bold.png": "mob = Text(\"NO\", color=YELLOW,weight=BOLD)",
+  "Mobjects_Text_004_MathTex.png": "mob = MathTex(r\"\\Psi(x)\", color=WHITE)",
+  "Mobjects_Text_005_MathTex2.png": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\") \nmob.set_color_by_tex(\"x\", YELLOW)"
 }
