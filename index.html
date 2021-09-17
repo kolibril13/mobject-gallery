@@ -54,7 +54,7 @@ class Example(Scene):
 
 <script>
     var request = new XMLHttpRequest();
-    request.open("GET", "name_snippet_pairs.json", false);
+    request.open("GET", "Mobjects_Basics.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
     document.writeln(' <h1>Basic Shapes</h1>')
@@ -62,7 +62,7 @@ class Example(Scene):
         document.write(`<img src='images/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
     }
     var request = new XMLHttpRequest();
-    request.open("GET", "name_snippet_pairs_text.json", false);
+    request.open("GET", "Mobjects_Text.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
     document.writeln(' <h1>Text</h1>')
