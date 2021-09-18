@@ -5,5 +5,7 @@
   "Camera_and_Style_003_CameraLEFT.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.shift(LEFT*0.5)",
   "Camera_and_Style_004_CameraUP.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.shift(UP*0.4)",
   "Camera_and_Style_005_FullScreenRectangle.png": "mob = FullScreenRectangle(stroke_width=200, color= YELLOW)",
-  "Camera_and_Style_006_SurroundingRectangle.png": "inner = Tex(r\"\\textbf{Hello}\", color=WHITE)\nmob = SurroundingRectangle(inner, corner_radius=0.1)"
+  "Camera_and_Style_006_SurroundingRectangle.png": "inner = Tex(r\"\\textbf{Hello}\", color=WHITE)\nmob = SurroundingRectangle(inner, corner_radius=0.1)",
+  "Camera_and_Style_007_Dot_set_color_by_gradient.png": "mob = Dot(radius=2.0) \nmob.set_color_by_gradient([PINK, BLUE])\nself.add(mob)",
+  "Camera_and_Style_008_Polygon_set_color.png": "mob = Polygon([-1, .5, 0], [-.5, 2, 0], [1, 2, 0], [1.5, .5, 0], [.25, -.5, 0])\nmob.set_fill(opacity=.5)\nmob.set_color([TEAL, RED, YELLOW])\nmob.set_stroke(width=8)\nmob.move_to(ORIGIN)"
 }
