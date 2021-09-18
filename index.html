@@ -59,21 +59,30 @@ class Example(Scene):
 
 
 <script>
-    var request = new XMLHttpRequest();
-    request.open("GET", "imgs/Mobjects_Basics.json", false);
-    request.send(null);
-    var jsonData = JSON.parse(request.responseText);
+    var request1 = new XMLHttpRequest();
+    request1.open("GET", "imgs/Mobjects_Basics.json", false);
+    request1.send(null);
+    var jsonData1 = JSON.parse(request1.responseText);
     document.writeln(' <h1>Basic Shapes</h1>')
-    for (let key of Object.keys(jsonData)) {
-        document.write(`<img src='imgs/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
+    for (let key of Object.keys(jsonData1)) {
+        document.write(`<img src='imgs/${key}' alt= '${jsonData1[key]}' onclick='myFunction(this);' class='image'> `);
     }
-    var request = new XMLHttpRequest();
-    request.open("GET", "imgs/Mobjects_Text.json", false);
-    request.send(null);
-    var jsonData = JSON.parse(request.responseText);
+    var request2 = new XMLHttpRequest();
+    request2.open("GET", "imgs/Mobjects_Text.json", false);
+    request2.send(null);
+    var jsonData2 = JSON.parse(request2.responseText);
     document.writeln(' <h1>Text</h1>')
-    for (let key of Object.keys(jsonData)) {
-        document.write(`<img src='imgs/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
+    for (let key of Object.keys(jsonData2)) {
+        document.write(`<img src='imgs/${key}' alt= '${jsonData2[key]}' onclick='myFunction(this);' class='image'> `);
+    }
+
+    var request3 = new XMLHttpRequest();
+    request3.open("GET", "imgs/Camera_and_Style.json", false);
+    request3.send(null);
+    var jsonData3 = JSON.parse(request3.responseText);
+    document.writeln(' <h1>Camera and Style</h1>')
+    for (let key of Object.keys(jsonData3)) {
+        document.write(`<img src='imgs/${key}' alt= '${jsonData3[key]}' onclick='myFunction(this);' class='image'> `);
     }
 
 
