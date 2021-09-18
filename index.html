@@ -58,20 +58,20 @@ class Example(Scene):
 
 <script>
     var request = new XMLHttpRequest();
-    request.open("GET", "/_static/Mobjects_Basics.json", false);
+    request.open("GET", "imgs/Mobjects_Basics.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
     document.writeln(' <h1>Basic Shapes</h1>')
     for (let key of Object.keys(jsonData)) {
-        document.write(`<img src='/_static/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
+        document.write(`<img src='imgs/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
     }
     var request = new XMLHttpRequest();
-    request.open("GET", "/_static/Mobjects_Text.json", false);
+    request.open("GET", "imgs/Mobjects_Text.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
     document.writeln(' <h1>Text</h1>')
     for (let key of Object.keys(jsonData)) {
-        document.write(`<img src='/_static/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
+        document.write(`<img src='imgs/${key}' alt= '${jsonData[key]}' onclick='myFunction(this);' class='image'> `);
     }
 
 
