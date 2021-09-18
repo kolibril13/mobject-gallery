@@ -27,6 +27,17 @@
             backface-visibility: hidden;
             border-radius: 8px;
         }
+        .imagebig {
+            opacity: 1;
+            display: inline-block;
+            border: 2px solid darkcyan;
+            width: 200px;
+            height: auto;
+            margin: 1px;
+            transition: .1s ease;
+            backface-visibility: hidden;
+            border-radius: 8px;
+        }
         .image:hover {
             opacity: 0.4;
         }
@@ -85,6 +96,14 @@ class Example(Scene):
         document.write(`<img src='imgs/${key}' alt= '${jsonData3[key]}' onclick='myFunction(this);' class='image'> `);
     }
 
+    var request4 = new XMLHttpRequest();
+    request4.open("GET", "imgs/Plots.json", false);
+    request4.send(null);
+    var jsonData4 = JSON.parse(request4.responseText);
+    document.writeln(' <h1>Plots</h1>')
+    for (let key of Object.keys(jsonData4)) {
+        document.write(`<img src='imgs/${key}' alt= '${jsonData4[key]}' onclick='myFunction(this);' class='image'> `);
+    }
 
 
     // add copy button to images
