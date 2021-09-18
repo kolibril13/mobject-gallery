@@ -2,6 +2,8 @@
   "Camera_and_Style_000_Background.png": "self.camera.background_color = YELLOW",
   "Camera_and_Style_001_ZoomIN.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.scale(0.6)",
   "Camera_and_Style_002_ZoomOUT.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.scale(1.2)",
-  "Camera_and_Style_003_CameraLEFT.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.shift(UP*0.4)",
-  "Camera_and_Style_004_CameraUP.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.shift(UP*0.4)"
+  "Camera_and_Style_003_CameraLEFT.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.shift(LEFT*0.5)",
+  "Camera_and_Style_004_CameraUP.png": "# Scene needs to be \"class MyExample(ZoomedScene)\"\nself.camera.frame.shift(UP*0.4)",
+  "Camera_and_Style_005_FullScreenRectangle.png": "mob = FullScreenRectangle(stroke_width=200, color= YELLOW)",
+  "Camera_and_Style_006_SurroundingRectangle.png": "inner = Tex(r\"\textbf{Hello}\", color=WHITE)\nmob = SurroundingRectangle(inner, corner_radius=0.1)"
 }
