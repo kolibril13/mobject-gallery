@@ -106,7 +106,7 @@ class Example(Scene):
     var jsonData4 = JSON.parse(request4.responseText);
     document.writeln(' <h1>Plots</h1>')
     for (let key of Object.keys(jsonData4)) {
-        document.write(`<img src='imgs/${key}' alt= '${jsonData4[key]}' onclick='myFunction(this);' class='image'> `);
+        document.write(`<img src='imgs/${key}' alt= '${jsonData4[key]}' onclick='myFunction(this);' class='imagebig'> `);
     }
 
 
