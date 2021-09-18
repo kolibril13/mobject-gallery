@@ -4,5 +4,6 @@
   "Plots_002_NumberPlane.png": "number_plane = NumberPlane(\n            x_range=[-10, 10, 1],\n            y_range=[-10, 10, 1],\n            background_line_style={\n                \"stroke_color\": TEAL,\n                \"stroke_width\": 4,\n                \"stroke_opacity\": 0.6\n            }\n        )",
   "Plots_003_PolarPlane.png": "polarplane_pi = PolarPlane(\n            azimuth_units=\"PI radians\",\n            size=6,\n            azimuth_label_font_size=33.6,\n            radius_config={\"font_size\": 33.6},\n        ).add_coordinates()",
   "Plots_004_Graph_with_Number.png": "vertices = [1, 2, 3, 4, 5, 6, 7, 8]\nedges = [(1, 7), (1, 8), (2, 3), (2, 4), (2, 5),\n         (2, 8), (3, 4), (6, 1), (6, 2),\n         (6, 3), (7, 2), (7, 4)]\ng = Graph(vertices, edges, layout=\"circular\", layout_scale=3,\n          labels=True, vertex_config={7: {\"fill_color\": RED}},\n          edge_config={(1, 7): {\"stroke_color\": RED},\n                       (2, 7): {\"stroke_color\": RED},\n                       (4, 7): {\"stroke_color\": RED}})",
-  "Plots_005_StreamLines.png": "func = lambda pos: ((pos[0]*UR+pos[1]*LEFT) - pos)\nmob= StreamLines(func)\nself.add(mob)"
+  "Plots_005_StreamLines.png": "func = lambda pos: ((pos[0]*UR+pos[1]*LEFT) - pos)\nmob= StreamLines(func)\nself.add(mob)",
+  "Plots_006_ArrowVectorField.png": "func = lambda pos: np.sin(pos[1])*RIGHT+np.cos(pos[0])*UP\nmob = ArrowVectorField(func)"
 }
