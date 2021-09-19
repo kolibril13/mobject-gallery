@@ -37,5 +37,8 @@
   "Mobjects_Basics_035_LabeledDot.png": "mob = LabeledDot(Tex(\"42\", color=BLACK), color=YELLOW)",
   "Mobjects_Basics_036_ManimBanner.png": "mob = ManimBanner()",
   "Mobjects_Basics_037_HTMLBanner.png": "self.camera.background_color = \"#ece6e2\"\nlogo_green = \"#87c2a5\"\nlogo_blue = \"#525893\"\nlogo_red = \"#e07a5f\"\ncircle = Circle(color=logo_green, fill_opacity=1).shift(LEFT)\nsquare = Square(color=logo_blue, fill_opacity=1).shift(UP)\ntriangle = Triangle(color=logo_red, fill_opacity=1).shift(RIGHT)\nlogo = VGroup(triangle, square, circle).scale(1.3)",
-  "Mobjects_Basics_038_ImageMobject.png": "mob = ImageMobject(image)"
+  "Mobjects_Basics_038_ImageMobject.png": "mob = ImageMobject(image)",
+  "Mobjects_Basics_039_ImageMobject_nearest.png": "np.random.seed(41)\na= np.random.randint(0, 255, size=(3, 4))\nimg = ImageMobject(np.uint8(a))\nimg.height = 6\nimg.set_resampling_algorithm(RESAMPLING_ALGORITHMS[\"nearest\"])",
+  "Mobjects_Basics_040_ImageMobject_cubic.png": "np.random.seed(41)\na= np.random.randint(0, 255, size=(3, 4))\nimg = ImageMobject(np.uint8(a))\nimg.height = 6\nimg.set_resampling_algorithm(RESAMPLING_ALGORITHMS[\"cubic\"])",
+  "Mobjects_Basics_041_SVGMobject.png": "mob = SVGMobject(\"svg_logo.svg\")\nself.add(mob)"
 }
