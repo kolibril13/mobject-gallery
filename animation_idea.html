@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <style>
-        .static {
-            position:absolute;
-            background: white;
-        }
-
-        .static:hover {
-            opacity:0;
-        }
-    </style>
-    <title>Hello Manim</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#indicate_example").hover(
+                function() {
+                    $(this).attr("src", "indicate.gif");
+                },
+                function() {
+                    $(this).attr("src", "indicate_img.png");
+                }
+            );
+        });
+    </script>
 </head>
 <body>
 
-<img class="static" src="indicate_img.png"><img class="active" src="indicate.gif">
-
-<img src="indicate.gif" alt="description of gif" />
-<img src="indicate_img.png" alt="description of gif" />
-
+<img id="indicate_example" src="indicate_img.png" />
 </body>
 </html>
+
+<!--<img src="indicate.gif" alt="description of gif" />-->
+<!--#<img src="indicate_img.png" alt="description of gif" />-->
+
