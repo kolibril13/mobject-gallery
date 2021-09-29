@@ -1,5 +1,5 @@
 {
-  "Mobjects_Basics_000_Dot.png": "d = Dot(color = YELLOW)",
+  "Mobjects_Basics_000_Dot.png": "mob = Dot(color = YELLOW)",
   "Mobjects_Basics_001_Circle.png": "mob = Circle(fill_opacity=1, fill_color= ORANGE, stroke_color=YELLOW)",
   "Mobjects_Basics_002_Annulus.png": "mob = Annulus(inner_radius=0.5, outer_radius=1.2,fill_color= DARK_BLUE, stroke_color=YELLOW, stroke_width=2)",
   "Mobjects_Basics_003_Ellipse.png": "mob = Ellipse(color = YELLOW)",
@@ -35,7 +35,7 @@
   "Mobjects_Basics_033_DoubleArrow.png": "mob = DoubleArrow(color= YELLOW)",
   "Mobjects_Basics_034_CurvedArrow.png": "mob = CurvedArrow(LEFT,RIGHT,color= YELLOW)",
   "Mobjects_Basics_035_ParametricFunction.png": "mob = ParametricFunction(lambda t: [t,0.2*np.sin(10*t),0],t_range = [-TAU, TAU],color= YELLOW)",
-  "Mobjects_Basics_036_CubicBezier.png": "p1 = [-3, 1, 0]\np1b=  p1 + 5 * RIGHT + 2 * UP\np2 = [3, -1, 0]\np2b = p2 + 5 * LEFT\nbezier = CubicBezier(p1,p1b, p2b, p2, color=YELLOW)",
+  "Mobjects_Basics_036_CubicBezier.png": "p1 = [-3, 1, 0]\n        p1b=  p1 + 5 * RIGHT + 2 * UP\n        p2 = [3, -1, 0]\n        p2b = p2 + 5 * LEFT\n        mob = CubicBezier(p1,p1b, p2b, p2, color=YELLOW)\n        self.add(mob)",
   "Mobjects_Basics_037_Brace.png": "mob = Brace(LEFT,RIGHT,color= YELLOW)",
   "Mobjects_Basics_038_BraceLabel.png": "l=Line(ORIGIN, RIGHT*1.4)\nmob= BraceLabel(l, text= r\"14 \\, \text{cm}\", color= YELLOW, buff=0.1)\nmob.submobjects[1].set_color(YELLOW)\nself.add(VGroup(l,mob).move_to(ORIGIN))",
   "Mobjects_Basics_039_ArcBrace.png": "arc = Arc(radius=0.5,start_angle=0,angle=5*PI/6)\nbrace = ArcBrace(arc).set_color(YELLOW)",
