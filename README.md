@@ -3,4 +3,4 @@
 
 Gallery of manim mobjects 
 
-* Attempt of rendering of mobject gallery online at readthedocs here, but not yet working https://github.com/kolibril13/flyingframes/pull/15
+* Attempt of rendering of mobject gallery online at readthedocs: https://github.com/kolibril13/flyingframes/pull/15
