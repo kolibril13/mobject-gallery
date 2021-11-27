@@ -1,8 +1,9 @@
+// @ts-check
 
+var version_number =  "v0.12.0"
+var whole_string = "Manim ".concat(version_number)
 
-var version_number = "Manim v0.12.0"
-
-document.getElementById('version_number').innerHTML = version_number;
+document.getElementById('version_number').innerHTML = whole_string;
 
 
 var request1 = new XMLHttpRequest();
