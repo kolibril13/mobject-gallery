@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="HTMLBanner.png">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
     <style>
-        h1 {margin-bottom:0;   margin-top:0}
-        h2 {margin-bottom:0;   margin-top:0}
-        p {margin-bottom:0;   margin-top:0}
+        h1 {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+
+        h2 {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+
+        p {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+
         .box {
-            position:absolute;
-            top:10px;
-            right:10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
 
         .div1 {
@@ -26,6 +35,7 @@
             border: 0;
             font-size: 10px;
         }
+
         .image {
             opacity: 1;
             display: inline-block;
@@ -37,6 +47,7 @@
             backface-visibility: hidden;
             border-radius: 8px;
         }
+
         .imagebig {
             opacity: 1;
             display: inline-block;
@@ -48,14 +59,14 @@
             backface-visibility: hidden;
             border-radius: 8px;
         }
+
         .image:hover {
             opacity: 0.4;
         }
+
         .imagebig:hover {
             opacity: 0.4;
         }
-
-
     </style>
     <title>Mobject Gallery</title>
 
@@ -63,71 +74,29 @@
 
 <body style="background-color:#ece6e2;">
 
-<div style="text-align:center">
-    <h2>Mobject Gallery</h2>
-    <a href="https://github.com/kolibril13/mobject-gallery">https://github.com/kolibril13/mobject-gallery</a>
-    <p>Hint: In PyCharm, activate the setting "Smart indent pasted lines".</p>
-    <p>Click on the images below to copy the code snippet. </p>
-</div>
-<div class="div1">
+    <div style="text-align:center">
+        <h2>Mobject Gallery</h2>
+        <a href="https://github.com/kolibril13/mobject-gallery">https://github.com/kolibril13/mobject-gallery</a>
+        <p>Hint: In PyCharm, activate the setting "Smart indent pasted lines".</p>
+        <p>Click on the images below to copy the code snippet. </p>
+    </div>
+    <div class="div1">
 
-    <br>
+<br>
 
-    <pre><code class="python" id="info_field"><b>Here will come the text that you copied.</b>
+<pre><code class="python" id="info_field"><b>Here will come the text that you copied.</b>
 class Example(Scene):
     def construct(self):
         self.add(Dot(color=YELLOW))
 </code></pre>
-</div>
-<div class="box">
-    <p>Manim v0.12.0</p>
-</div>
+    </div>
+    <div class="box">
+        <p id="version_number"></p>
+    </div>
 
-<script>
-    var request1 = new XMLHttpRequest();
-    request1.open("GET", "imgs/Mobjects_Basics.json", false);
-    request1.send(null);
-    var jsonData1 = JSON.parse(request1.responseText);
-    document.writeln(' <h1>Basic Shapes</h1>')
-    for (let key of Object.keys(jsonData1)) {
-        document.write(`<img src='imgs/${key}' alt= '${jsonData1[key]}' onclick='myFunction(this);' class='image'> `);
-    }
-    var request2 = new XMLHttpRequest();
-    request2.open("GET", "imgs/Mobjects_Text.json", false);
-    request2.send(null);
-    var jsonData2 = JSON.parse(request2.responseText);
-    document.writeln(' <h1>Text</h1>')
-    for (let key of Object.keys(jsonData2)) {
-        document.write(`<img src='imgs/${key}' alt= '${jsonData2[key]}' onclick='myFunction(this);' class='image'> `);
-    }
-
-    var request3 = new XMLHttpRequest();
-    request3.open("GET", "imgs/Camera_and_Style.json", false);
-    request3.send(null);
-    var jsonData3 = JSON.parse(request3.responseText);
-    document.writeln(' <h1>Camera and Style</h1>')
-    for (let key of Object.keys(jsonData3)) {
-        document.write(`<img src='imgs/${key}' alt= '${jsonData3[key]}' onclick='myFunction(this);' class='image'> `);
-    }
-
-    var request4 = new XMLHttpRequest();
-    request4.open("GET", "imgs/Plots.json", false);
-    request4.send(null);
-    var jsonData4 = JSON.parse(request4.responseText);
-    document.writeln(' <h1>Plots</h1>')
-    for (let key of Object.keys(jsonData4)) {
-        document.write(`<img src='imgs/${key}' alt= '${jsonData4[key]}' onclick='myFunction(this);' class='imagebig'> `);
-    }
-
-    // add copy button to images
-    function myFunction(imgs) {
-        var name = imgs.alt;
-        navigator.clipboard.writeText(name);
-        document.getElementById("info_field").innerHTML = name + " \n<b>is now copied to clipboard.</b>"
-    }
-</script>
+<script src="init_images_and_text.js"></script>
 
 
 </body>
-</html>
 
+</html>
