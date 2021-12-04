@@ -1,6 +1,6 @@
 // @ts-check
 
-var version_number =  "v0.12.0"
+var version_number =  "v0.13.0"
 var whole_string = "Manim ".concat(version_number)
 
 document.getElementById('version_number').innerHTML = whole_string;
