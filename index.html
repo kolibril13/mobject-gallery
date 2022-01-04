@@ -6,7 +6,20 @@
     <link rel="icon" href="HTMLBanner.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        function display_code_from_gallery_cell(imgs) {
+            var name = imgs.dataset.code;
+            document.getElementById("info_field").innerHTML = name
+            hljs.initHighlighting.called = false;
+            hljs.initHighlighting();
+        }
+        function reset_content(imgs) {
+            document.getElementById("info_field").innerHTML = "<br><br>"
+            hljs.initHighlighting.called = false;
+            hljs.initHighlighting();
+        }
+    </script>
     <style>
         h1 {
             margin-bottom: 0;
@@ -29,17 +42,85 @@
             right: 10px;
         }
 
+        .box2 {
+            position: absolute;
+            top: 20px;
+            right: 5px;
+        }
+
+        /* basic positioning */
+
+        .legend {
+            list-style: none;
+        }
+
+        .legend li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .legend span {
+            border-radius: 4px;
+            float: left;
+            width: 12px;
+            height: 12px;
+            margin: 2px;
+        }
+
+        /* your colors */
+
+        .legend .label1 {
+            background-color: #ED6A5A;
+        }
+
+        .legend .label2 {
+            background-color: #007AB8;
+        }
+
+        .legend .label3 {
+            background-color: #A8DCF0;
+        }
+
+        button {
+            border-radius: 4px;
+            background-color: lightgrey;
+            height: 18px;
+            width: 18px;
+            padding: 0px;
+            z-index: 400;
+            border-width: 0;
+        }
+
+        button:hover{
+            opacity: 0.6;
+        }
         .div1 {
-            width: 600px;
+            width: 500px;
             height: 150px;
             border: 0;
             font-size: 10px;
+            position: relative;
+
         }
 
-        .image {
+        .block2 {
+            position: absolute;
+            top: 16px;
+            right: -5px;
+            z-index: 400;
+
+        }
+
+        .python {
+            border-radius: 8px;
+            position: relative;
+            z-index: 100;
+            width: 500px;
+        }
+
+        .gallery_entry {
             opacity: 1;
             display: inline-block;
-            border: 2px solid darkcyan;
             width: 80px;
             height: auto;
             margin: 1px;
@@ -48,55 +129,59 @@
             border-radius: 8px;
         }
 
-        .imagebig {
-            opacity: 1;
-            display: inline-block;
-            border: 2px solid darkcyan;
-            width: 170px;
-            height: auto;
-            margin: 1px;
-            transition: .1s ease;
-            backface-visibility: hidden;
-            border-radius: 8px;
-        }
-
-        .image:hover {
-            opacity: 0.4;
-        }
-
-        .imagebig:hover {
-            opacity: 0.4;
+        .gallery_entry:hover {
+            opacity: 0.7;
         }
     </style>
-    <title>Mobject Gallery</title>
-
+    <title>Python Example Gallery</title>
 </head>
 
 <body style="background-color:#ece6e2;">
-
     <div style="text-align:center">
-        <h2>Mobject Gallery</h2>
-        <a href="https://github.com/kolibril13/mobject-gallery">https://github.com/kolibril13/mobject-gallery</a>
-        <p>Hint: In PyCharm, activate the setting "Smart indent pasted lines".</p>
-        <p>Click on the images below to copy the code snippet. </p>
+        <h2>Array Gallery</h2> Repo: <a
+            href="https://github.com/kolibril13/plywood">https://github.com/kolibril13/plywood</a>
     </div>
-    <div class="div1">
+    <div> <small>
+            <br>
+            <b> Info: </b>
+            Normal cells are independend of each other, and can be run
+            togehter with the import cell. <br>
+            A "Dependend" cell depends on the "Normal" cell left to it.<br>
+            A "Dependend" cell depends on another "Dependend" cell left to
+            it.<br>
+        </small> </div>
 
-<br>
 
-<pre><code class="python" id="info_field"><b>Here will come the text that you copied.</b>
-class Example(Scene):
-    def construct(self):
-        self.add(Dot(color=YELLOW))
-</code></pre>
-    </div>
+
+
+<div class="div1">
+<pre>
+<b>Here is the corresponding code:</b>
+<code class="python" id="info_field"> <br> </code>
+</pre>
+
+<div class='block2'><button type="button" onclick="reset_content(this)">X</button></div>
+</div>
+
+
+
+
+
+
     <div class="box">
         <p id="version_number"></p>
     </div>
-
-<script src="init_images_and_text.js"></script>
-
-
+    <script src="init_images_and_text.js"></script>
+    <div class="box2">
+        <ul class="legend">
+            <li><span class="label1"></span> Header</li>
+            <br>
+            <li><span class="label2"></span> Normal</li>
+            <br>
+            <li><span class="label3"></span> Dependend</li>
+            <br>
+        </ul>
+    </div>
 </body>
 
 </html>
