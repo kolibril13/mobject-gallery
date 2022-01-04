@@ -1,5 +1,5 @@
 {
-  "Mobject Text": [
+  "Text": [
     [
       {
         "image": "Text1.png",
@@ -74,13 +74,6 @@
     ],
     [
       {
-        "image": "ZoomIN.png",
-        "code": "#needs ZoomedScene \nself.camera.frame.scale(0.6) ",
-        "css": ""
-      }
-    ],
-    [
-      {
         "image": "ZoomOUT.png",
         "code": "# needs ZoomedScene \nself.camera.frame.scale(1.2) ",
         "css": ""
@@ -131,7 +124,7 @@
     [
       {
         "image": "Dot_set_color_by_gradient.png",
-        "code": "mob = Dot(radius=2.0)  \nmob.set_color_by_gradient([PINK, BLUE]) \nself.add(mob) ",
+        "code": "mob = Dot(radius=2.0)  \nmob.set_color_by_gradient([PINK, BLUE]) ",
         "css": ""
       }
     ],
