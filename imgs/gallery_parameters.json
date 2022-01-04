@@ -71,6 +71,76 @@
         "code": "#needs ZoomedScene \nself.camera.frame.scale(0.6) ",
         "css": ""
       }
+    ],
+    [
+      {
+        "image": "ZoomIN.png",
+        "code": "#needs ZoomedScene \nself.camera.frame.scale(0.6) ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "ZoomOUT.png",
+        "code": "# needs ZoomedScene \nself.camera.frame.scale(1.2) ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "CameraLEFT.png",
+        "code": "# needs ZoomedScene \nself.camera.frame.shift(LEFT*0.5) ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "CameraUP.png",
+        "code": "# needs ZoomedScene \nself.camera.frame.shift(UP*0.4) ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "MatchHEIGHT.png",
+        "code": "# needs ZoomedScene \nself.camera.frame.height =  mob.height + 3*SMALL_BUFF ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "MatchWIDTH.png",
+        "code": "# needs ZoomedScene \nself.camera.frame.width =  mob.width + 3*SMALL_BUFF  ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "FullScreenRectangle.png",
+        "code": "mob = FullScreenRectangle(stroke_width=200, color= YELLOW) ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "SurroundingRectangle.png",
+        "code": "inner = Tex(r\"\\textbf{Hello}\", color=WHITE) \nmob = SurroundingRectangle(inner, corner_radius=0.1) ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "Dot_set_color_by_gradient.png",
+        "code": "mob = Dot(radius=2.0)  \nmob.set_color_by_gradient([PINK, BLUE]) \nself.add(mob) ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "Polygon_set_color.png",
+        "code": "mob = Polygon([-1, .5, 0], [-.5, 2, 0], [1, 2, 0], [1.5, .5, 0], [.25, -.5, 0], sheen_direction = UP) \nmob.set_fill(opacity=.5) \nmob.set_color([TEAL, RED, YELLOW]) \nmob.set_stroke(width=8) \nmob.move_to(ORIGIN) ",
+        "css": ""
+      }
     ]
   ]
 }
