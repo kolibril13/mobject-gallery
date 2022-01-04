@@ -4,56 +4,72 @@
       {
         "image": "Text1.png",
         "code": "mob = Text(\"Hello\", color=WHITE) ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
       }
     ],
     [
       {
         "image": "Text2.png",
         "code": "mob = Text(\"World\", color=YELLOW,slant=ITALIC) ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
       }
     ],
     [
       {
         "image": "Underline.png",
         "code": "t = Tex(\"YES\") \nul = Underline(t, color=YELLOW) ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
       }
     ],
     [
       {
         "image": "Bold.png",
         "code": "mob = Text(\"NO\", color=YELLOW,weight=BOLD)  ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
       }
     ],
     [
       {
         "image": "MathTex.png",
         "code": "mob = MathTex(r\"\\Psi(x)\", color=WHITE)  ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
       }
     ],
     [
       {
         "image": "MathTex_stix2.png",
         "code": "stix2 = TexTemplate()  \nstix2.add_to_preamble(r\"\\usepackage{stix2}\", prepend= True)  \nMathTex.set_default(tex_template=stix2)  \nmob = MathTex(r\"\\Psi(x)\", color=WHITE)  ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
       }
     ],
     [
       {
         "image": "MathTex2.png",
         "code": "mob = MathTex(r\"e^x\",substrings_to_isolate=\"x\") \nmob.set_color_by_tex(\"x\", YELLOW) ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
       }
     ],
     [
       {
         "image": "Check.png",
         "code": "check= Tex(r\"\\checkmark\", color= GREEN, stroke_width=8).scale(3) \ncheck.stretch(0.8, dim = 1) \ncheck.stretch(1.1, dim = 0) ",
-        "css": "border: 3px solid #008DD5;"
+        "css": ""
+      }
+    ]
+  ],
+  "Camera and Style": [
+    [
+      {
+        "image": "Background.png",
+        "code": "self.camera.background_color = YELLOW ",
+        "css": ""
+      }
+    ],
+    [
+      {
+        "image": "ZoomIN.png",
+        "code": "#needs ZoomedScene \nself.camera.frame.scale(0.6) ",
+        "css": ""
       }
     ]
   ]
