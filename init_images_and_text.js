@@ -18,11 +18,10 @@ for (let key of Object.keys(jsonData1)) {
 
     let chapter_content = jsonData1[key]
     for (const entery of chapter_content) {
-        let element_dict= entery[0]
-        let path_of_example = element_dict["image"]
-        let codeblock_of_example = element_dict["code"]
-        let css_of_example = element_dict["css"]
-        document.write(`<img src='imgs/${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
+        let path_of_example = entery["image_path"]
+        let codeblock_of_example = entery["code"]
+        let css_of_example = entery["css"]
+        document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
 
     }
 
