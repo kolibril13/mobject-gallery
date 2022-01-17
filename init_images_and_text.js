@@ -7,7 +7,7 @@ document.getElementById('version_number').innerHTML = whole_string;
 
 
 let request1 = new XMLHttpRequest();
-request1.open("GET", "imgs/gallery_parameters.json", false);
+request1.open("GET", "gallery_assets/gallery_parameters.json", false);
 request1.send(null);
 
 let jsonData1 = JSON.parse(request1.responseText);
