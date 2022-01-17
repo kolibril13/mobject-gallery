@@ -5,6 +5,9 @@ media/
 .idea/
 *$py.class
 
+.DS_Store
+.idea
+
 # C extensions
 *.so
 
