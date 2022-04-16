@@ -3,21 +3,19 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="HTMLBanner.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <script>
-        hljs.initHighlightingOnLoad();
+        hljs.highlightAll();
         function display_code_from_gallery_cell(imgs) {
             var name = imgs.dataset.code;
             document.getElementById("info_field").innerHTML = name
-            hljs.initHighlighting.called = false;
-            hljs.initHighlighting();
+            hljs.highlightAll();
         }
+        // rest the code content block to an empty paragraph 
         function reset_content(imgs) {
-            document.getElementById("info_field").innerHTML = "<br><br>"
-            hljs.initHighlighting.called = false;
-            hljs.initHighlighting();
+            document.getElementById("info_field").innerHTML = "<p> <br></p>" //maybe better solution possible?
+            hljs.highlightAll();
         }
     </script>
     <style>
@@ -44,7 +42,7 @@
 
         .box2 {
             position: absolute;
-            top: 20px;
+            top: 45px;
             right: 5px;
         }
 
@@ -91,22 +89,23 @@
             border-width: 0;
         }
 
-        button:hover{
+        button:hover {
             opacity: 0.6;
         }
+
         .div1 {
             width: 500px;
             height: 150px;
             border: 0;
             font-size: 10px;
-            position: relative;
-
+            position: sticky;
+            top: 0;
         }
 
         .block2 {
             position: absolute;
-            top: 16px;
-            right: -5px;
+            top: 17px;     /*TODO button position should not be hard coded*/
+            right: -14px;
             z-index: 400;
 
         }
@@ -133,53 +132,80 @@
         .gallery_entry:hover {
             opacity: 0.7;
         }
+
+
     </style>
     <title>Mobject Gallery</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
+
 </head>
 
 <body style="background-color:#ece6e2;">
     <div style="text-align:center">
         <h2>Mobject Gallery</h2>
-        <a href="https://github.com/kolibril13/mobject-gallery">https://github.com/kolibril13/mobject-gallery</a>
-
+        Repo: <a href=" https://github.com/kolibril13/mobject-gallery">https://github.com/kolibril13/mobject-gallery</a>
     </div>
     <div> <small>
             <br>
             <b> Info: </b>
-            Click on the images below to show thir code snippets.<br>
-        </small> </div>
+            
+            <br>
+        </small>
+    </div>
 
+    <div class="div1">
 
-
-
-<div class="div1">
+<!-- maybe better html indention possible for this pre block?  -->
 <pre>
-<b>Here is the corresponding code:</b>
+<b style="background-color:#ece6e2; ">Here is the corresponding code:</b>
 <code class="python" id="info_field"> <br> </code>
-</pre>
-
-<div class='block2'><button type="button" onclick="reset_content(this)">X</button></div>
-</div>
-
-
-
-
-
+</pre>  <!-- better naming of these divs here-->
+        <div class='block2'>
+            <button type="button" onclick="reset_content(this)">X</button>
+        </div>
+    </div>
 
     <div class="box">
-        <p id="version_number"></p>
+        <p style="opacity: 0.8;"></p>  <tt> v0.15.1 (Manim) </tt><br>
+        <p style="opacity: 0.4;"> <tt>  </tt> </p>
     </div>
-    <script src="index.js"></script>
+    <script>
+
+        let request1 = new XMLHttpRequest();
+        request1.open("GET", "gallery_assets/gallery_parameters.json", false);
+        request1.send(null);
+
+        let jsonData1 = JSON.parse(request1.responseText);
+
+        for (let key of Object.keys(jsonData1)) {
+            let chapter_of_html = key
+            document.writeln(`<h1> ${chapter_of_html} </h1>`)
+
+            let chapter_content = jsonData1[key]
+            for (const chap_element of chapter_content) {
+                let path_of_example = chap_element["image_path"]
+                let codeblock_of_example = chap_element["code"]
+                let css_of_example = chap_element["css"]
+                document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
+            }
+        }
+    </script>
+
     <div class="box2">
         <ul class="legend">
-            <li><span class="label1"></span> </li> <!--  Header -->
+            <li><span class="label1"></span> </li>
             <br>
-            <li><span class="label2"></span> </li>  <!--  Normal -->
+            <li><span class="label2"></span> </li>
             <br>
-            <li><span class="label3"></span> </li> <!--  Dependend -->
-            <br> 
+            <li><span class="label3"></span> </li>
+            <br>
         </ul>
     </div>
+
+    <div style="position: fixed; bottom: 10px; right:10px"> Hello World! </a></div>
+
+
 </body>
 
 </html>
