@@ -1,6 +1,12 @@
 
 # https://kolibril13.github.io/mobject-gallery/
 
-Gallery of manim mobjects 
+Gallery of manim mobjects.
 
-* Attempt of rendering of mobject gallery online at readthedocs: https://github.com/kolibril13/flyingframes/pull/15
+Roadmap draft:
+
+* add also examples for videos
+* better colors -> less intense yellow
+* new plywood architecture
+*  VS Code addon better plywood
+* better font
