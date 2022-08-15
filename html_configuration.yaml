@@ -5,4 +5,4 @@ description: |
 favicon: icon.png
 custom_footer: |
   <div style="position: fixed; bottom: 10px; right:10px"> Hello World! </a></div>
-gallary_parameters_path: gallery_assets/gallery_parameters.json
+gallery_parameters_path: gallery_assets/gallery_parameters.json
