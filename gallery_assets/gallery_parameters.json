@@ -382,7 +382,7 @@
       "image_path": "gallery_assets/Basic_Shapes_064_BarChart.png",
       "celltype": "Normal",
       "css": "",
-      "code": "%%manim $params\n\nclass Example(ZoomedScene):\n    def construct(self):\n        vals = [1, 3, 2, 5] #HEREFROM\n        labels = [\n            \"foo\",\n            \"bar\",\n            \"foo3\",\n            \"foo2\",\n        ]\n        colors = [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\"]\n        bar = BarChart(\n            vals,\n            max_value=max(vals),\n            bar_colors=colors,\n            bar_names=labels,\n            bar_label_scale_val=1,\n        ) #HERETO\n        self.add(bar) \n        self.camera.frame.scale(1/1.4)"
+      "code": "%%manim $params\n\nclass Example(ZoomedScene):\n    def construct(self):\n        vals = [1, 3, 2, 5] #HEREFROM\n        labels = [\n            \"foo\",\n            \"bar\",\n            \"foo3\",\n            \"foo2\",\n        ]\n        colors = [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\"]\n        bar = BarChart(\n            vals,\n            bar_colors=colors,\n            bar_names=labels,\n        ) #HERETO\n        self.add(bar) \n        self.camera.frame.scale(1/1.4)"
     },
     {
       "image_path": "gallery_assets/Basic_Shapes_065_Light_change_default.png",

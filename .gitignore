@@ -134,4 +134,6 @@ dmypy.json
 .pyre/
 
 
+mobject_env
+
 06_apple_emoji_NOT_INCLUDE.ipynb

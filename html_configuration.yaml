@@ -1,6 +1,6 @@
 project_name: Mobject Gallery
 repository_url: https://github.com/kolibril13/mobject-gallery
-user_content_version: 0.15.1 (Manim) #  Note: this is NOT the version of the plywood gallery, but the version of the plywood content. When the plywood gallery is made for napari v0.4.15 , name this e.g. 0.4.15
+user_content_version: v0.16.0.post0 (Manim) #  Note: this is NOT the version of the plywood gallery, but the version of the plywood content. When the plywood gallery is made for napari v0.4.15 , name this e.g. 0.4.15
 description: |
 favicon: icon.png
 custom_footer: |
