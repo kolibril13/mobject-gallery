@@ -59,6 +59,9 @@
             margin-top: 0
         }
 
+        .gallery_div{
+            max-width: 850px;
+        }
         .box {
             position: absolute;
             top: 10px;
@@ -135,7 +138,7 @@
             border: 2px solid #008DD5;
             width: 80px;
             height: auto;
-            margin: 1px;
+            margin: 0px;
             transition: .1s ease;
             backface-visibility: hidden;
             border-radius: 8px;
@@ -175,28 +178,29 @@
         <p style="opacity: 0.8;"></p> <tt>v0.16.0.post0 (Manim) </tt><br>
         <p style="opacity: 0.4;"> <tt> </tt> </p>
     </div>
-    <script>
+    <div class="gallery_div">
+        <script>
 
-        let request1 = new XMLHttpRequest();
-        request1.open("GET", "gallery_assets/gallery_parameters.json", false);
-        request1.send(null);
+            let request1 = new XMLHttpRequest();
+            request1.open("GET", "gallery_assets/gallery_parameters.json", false);
+            request1.send(null);
 
-        let jsonData1 = JSON.parse(request1.responseText);
+            let jsonData1 = JSON.parse(request1.responseText);
 
-        for (let key of Object.keys(jsonData1)) {
-            let chapter_of_html = key
-            document.writeln(`<h1> ${chapter_of_html} </h1>`)
+            for (let key of Object.keys(jsonData1)) {
+                let chapter_of_html = key
+                document.writeln(`<h2> <br> <tt>${chapter_of_html}<tt></h1>`)
 
-            let chapter_content = jsonData1[key]
-            for (const chap_element of chapter_content) {
-                let path_of_example = chap_element["image_path"]
-                let codeblock_of_example = chap_element["code"]
-                let css_of_example = chap_element["css"]
-                document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
+                let chapter_content = jsonData1[key]
+                for (const chap_element of chapter_content) {
+                    let path_of_example = chap_element["image_path"]
+                    let codeblock_of_example = chap_element["code"]
+                    let css_of_example = chap_element["css"]
+                    document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
+                }
             }
-        }
-    </script>
-
+        </script>
+    </div>
     <div class="box2">
         <ul class="legend">
             <a title="Link to GitHub" href="https://github.com/kolibril13/mobject-gallery"><i class="fa fa-github"
