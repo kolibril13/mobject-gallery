@@ -2,144 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- HTML Meta Tags -->
+    <title>Mobject Gallery</title>
+    <meta name="description" content="">
+    
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:url" content="https://github.com/kolibril13/mobject-gallery">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mobject Gallery">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://kolibril13.github.io/mobject-gallery/preview_image.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="kolibril13.github.io">
+    <meta property="twitter:url" content="https://github.com/kolibril13/mobject-gallery">
+    <meta name="twitter:title" content="Mobject Gallery">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://kolibril13.github.io/mobject-gallery/preview_image.png">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+        
+
+
+
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="styles.css"> comming soon!! -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
-    <script>
-        hljs.highlightAll();
-        function display_code_from_gallery_cell(imgs) {
-            var name = imgs.dataset.code;
-            document.getElementById("info_field").innerHTML = name
-            hljs.highlightAll();
-        }
-        // rest the code content block to an empty paragraph 
-        function reset_content(imgs) {
-            document.getElementById("info_field").innerHTML = "<p> <br></p>" //maybe better solution possible?
-            hljs.highlightAll();
-        }
-    </script>
+    <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
+    <!-- <script src="script.js" defer></script> comming soon!! -->
     <style>
-        a:link {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: grey;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-
-        a:active {
-            color: blue;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-
-        h1 {
-            margin-bottom: 0;
-            margin-top: 0
-        }
-
+        h1,
         h2 {
+            font-family: monospace;
             margin-bottom: 0;
             margin-top: 0
         }
 
-        p {
-            margin-bottom: 0;
-            margin-top: 0
+        .whole_page {
+            margin: auto;
+            width: 700px;
+            border-left: 3px solid #d6c6bb;
+            border-right: 3px solid #d6c6bb;
+
+            padding: 10px;
         }
 
-        .gallery_div {
-            max-width: 850px;
+
+
+        .container_code {
+            position: relative;
+            width: 600px;
+            height: 1px;
+            /* there is probably a better way to do this  */
+            border: 0;
+            z-index: 2;
+            font-size: 10px;
+            position: sticky;
+            top: 0;
+
         }
 
-        .box {
+        /* .python can not be renamed because of highlight.js */
+        .container_code .python {
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            width: 600px;
+        }
+
+        .container_code .close_button {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 17px;
+            right: -14px;
+            z-index: 3;
+
         }
 
-        .box2 {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
-
-        /* basic positioning */
-
-        .legend {
-            list-style: none;
-        }
-
-        .legend li {
-            float: left;
-            margin-right: 10px;
-        }
-
-        .legend span {
-            border-radius: 4px;
-            float: left;
-            width: 12px;
-            height: 10px;
-            margin: 2px;
-        }
-
-        button {
+        .container_code .close_button button {
             border-radius: 4px;
             background-color: lightgrey;
             height: 18px;
             width: 18px;
             padding: 0px;
-            z-index: 400;
+            z-index: 3;
             border-width: 0;
         }
 
-        button:hover {
+        .container_code .close_button button:hover {
             opacity: 0.6;
         }
 
-        .div1 {
-            width: 500px;
-            height: 100px;
-            border: 0;
-            font-size: 10px;
-            position: sticky;
-            top: 0;
-        }
-
-        .block2 {
-            position: absolute;
-            top: 17px;
-            /*TODO button position should not be hard coded*/
-            right: -14px;
-            z-index: 400;
-
-        }
-
-        .python {
-            border-radius: 8px;
-            position: relative;
-            z-index: 100;
-            width: 500px;
-        }
+        /* .gallery_container{
+} */
 
         .gallery_entry {
             opacity: 1;
             display: inline-block;
-            border: 2px solid #008DD5;
             width: 80px;
             height: auto;
-            margin: 0px;
+            margin: 3px;
+            vertical-align: middle;
             transition: .1s ease;
             backface-visibility: hidden;
             border-radius: 8px;
@@ -148,70 +116,357 @@
         .gallery_entry:hover {
             opacity: 0.7;
         }
-    </style>
-    <title>Mobject Gallery</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
 
+        /* container_info is the top right info section */
+
+        .container_info {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            width: max-content;
+            width: 300px;
+            height: 200px;
+            /* border: 2px solid; */
+            border-color: grey;
+        }
+
+        .container_info table {
+
+            border-spacing: 10px 20px;
+            font-family: monospace
+        }
+
+        .container_info .info_github_icon {
+            font-size: 36px
+        }
+
+        .container_info .info_search_icon {
+            font-size: 36px
+        }
+
+        .container_info .info_version p {
+            margin-bottom: 2.5px;
+            margin-top: 2.5px;
+        }
+
+        .container_info .info_version a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .container_info .info_version a:hover {
+            color: blue;
+            opacity: 0.8;
+        }
+
+        .container_info .info_info_icon {
+            font-size: 36px
+        }
+
+        .container_info .githublink a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .container_info .githublink a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .container_info .githublink a:hover {
+            color: grey;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .container_info .githublink a:active {
+            color: blue;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .container_info .info_legend ul {
+            margin: 0;
+            padding: 0;
+            float: left;
+            list-style: none;
+        }
+
+        .container_info .info_legend ul li {
+            margin-left: 0;
+            line-height: 18px;
+        }
+
+        .container_info .info_legend .legend-labels span {
+            float: left;
+            height: 10px;
+            width: 30px;
+            /* IMPORTANT spacing on the right */
+            margin-right: 5px;
+            margin-left: 3px;
+            border-radius: 4px;
+            /* margin-top must be  (info_legend ul li line-height - .info_legend .legend-labels span height) /2  */
+            margin-top: 4px;
+        }
+
+        .container_info .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .container_info .tooltip .tooltiptext {
+            visibility: hidden;
+            font-size: small;
+            width: 500px;
+            background-color: white;
+            color: black;
+            text-align: left;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 150%;
+            left: 100%;
+            margin-left: -350px;
+            border: 2px solid;
+        }
+
+        /* TODO: The Tooltip has to be refectored*/
+        /* this is the arrow  */
+        .container_info .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            /* TODO: calculate  left: 66%;  from  margin-lef at tooltiptextt*/
+            left: 66%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .container_info .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+
+        @media (max-width: 1200px) {
+            .container_info {
+                position: static;
+            }
+
+
+
+        }
+
+        /* TODO: This should be done with a smooth transition. */
+        @media (max-width: 750px) {
+            .whole_page {
+                width: 95%;
+            }
+        }
+
+        /* TODO: This should be done with a smooth transition. */
+        @media (max-width: 680px) {
+
+            .container_code {
+                width: 97%;
+            }
+
+            .container_code .python {
+                width: 100%;
+                ;
+            }
+        }
+    </style>
 </head>
 
+
+
 <body style="background-color:#ece6e2;">
-    <div style="text-align:center">
-        <h2><tt>Mobject Gallery</tt></h2>
-    </div>
-    <div> <small>
-
-        </small>
-    </div>
-
-    <div class="div1">
-        <!-- maybe better html indention possible for this pre block?  -->
-        <pre>
-<b style="background-color:#ece6e2; ">Here is the corresponding code:</b>
-<code class="python" id="info_field"> <br> </code>
+    <div class="whole_page">
+        <div style="text-align:center">
+            <h2>Mobject Gallery</h2>
+        </div>
+        <div class="container_code">
+            <!-- maybe better html indention possible for this pre block?  -->
+            <pre>
+<b>Code:</b>
+<code class="python" id="code_snippet"> <br> </code>
 </pre> <!-- better naming of these divs here-->
-        <div class='block2'>
-            <button type="button" onclick="reset_content(this)">X</button>
+            <div class='close_button'>
+                <button type="button" onclick="reset_content(this)">X</button>
+            </div>
+        </div>
+        <div>
+            <br><br><br><br><br><br><br><br>
+            <!-- TODO This can be done better with a fixed length -->
+        </div>
+        <div id="gallery_container">
+            <template gallery-item-template>
+                <img class='gallery_entry' src='' data-code='' style='width: auto;'
+                    onclick='display_code_from_gallery_cell(this);'>
+            </template>
+
+            <template heading-template>
+                <span><br>
+                    <h2></h2>
+                </span>
+
+            </template>
+        </div>
+        <div class="container_info">
+            <table>
+                <tr>
+                    <td class="info_github_icon">
+                        <div class="tooltip">
+                            <div class="githublink">
+                                <i class="fa fa-github"></i>
+                            </div>
+                            <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
+                            <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
+                                Links to GitHub repos on the right.
+                            </div>
+                        </div>
+                    </td>
+                    <td class="info_version">
+                        <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
+                                href="https://github.com/kolibril13/mobject-gallery"><span
+                                    class="tooltip">user content v0.17.1 </span></a><br></p>
+
+                        <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
+                                href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">
+                                    plywood core v0.0.11</span></a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_search_icon">
+                        <div class="tooltip">
+                            <div class="githublink">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
+                            <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
+                                Search for keywords in gallery.
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <input type="search" id="search" autocomplete="off" data-search>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info_info_icon">
+                        <div class="tooltip">
+                            <div class="infologo">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+                            <div class="tooltiptext">
+                                <ul>
+                                    <li> <strong>Header</strong> cells contain imports and definitions.</li>
+                                    <li> <strong>Normal</strong> cells are independent of each other, and can run
+                                        togehter
+                                        with the <strong>Header</strong> cell.
+                                    </li>
+                                    <li> A <strong>Dependent</strong> cell depends on the <strong>Normal</strong> cell
+                                        left
+                                        to it.
+                                    </li>
+                                    <li> A <strong>Dependent</strong> cell depends on another <strong>Dependent</strong>
+                                        cell left to it.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="info_legend">
+                            <ul class='legend-labels'>
+                                <li><span style='background:#ED6A5A;'></span>Header</li>
+                                <li><span style='background:#007AB8;'></span>Normal</li>
+                                <li><span style='background:#A8DCF0;'></span>Dependent</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-
-    <div class="box">
-        <p style="opacity: 0.8;"></p> <tt>v0.17.1 (Manim) </tt><br>
-        <p style="opacity: 0.4;"> <tt> </tt> </p>
-    </div>
-    <div class="gallery_div">
-        <script>
-
-            let request1 = new XMLHttpRequest();
-            request1.open("GET", "gallery_assets/gallery_parameters.json", false);
-            request1.send(null);
-
-            let jsonData1 = JSON.parse(request1.responseText);
-
-            for (let key of Object.keys(jsonData1)) {
-                let chapter_of_html = key
-                document.writeln(`<h2> <br> <tt>${chapter_of_html}<tt></h1>`)
-
-                let chapter_content = jsonData1[key]
-                for (const chap_element of chapter_content) {
-                    let path_of_example = chap_element["image_path"]
-                    let codeblock_of_example = chap_element["code"]
-                    let css_of_example = chap_element["css"]
-                    document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
-                }
-            }
-        </script>
-    </div>
-    <div class="box2">
-        <ul class="legend">
-            <a title="Link to GitHub" href="https://github.com/kolibril13/mobject-gallery"><i class="fa fa-github"
-                    class="tooltip" style='font-size:36px;'></i></a>
-        </ul>
-    </div>
-
-    <div style="position: fixed; bottom: 10px; right:10px"></a></div>
-
-
 </body>
+
+<script>
+    hljs.highlightAll();
+    function display_code_from_gallery_cell(imgs) {
+        var name = imgs.dataset.code;
+        document.getElementById("code_snippet").innerHTML = name
+        hljs.highlightAll();
+    }
+    // rest the code content block to an empty paragraph 
+    function reset_content(imgs) {
+        document.getElementById("code_snippet").innerHTML = "<p> <br></p>" //maybe better solution possible?
+        hljs.highlightAll();
+    }
+
+    let request = new XMLHttpRequest();
+    request.open("GET", "gallery_assets/gallery_parameters.json", false);
+    request.send(null);
+    let json_content_all = JSON.parse(request.responseText);
+    jsonData = json_content_all["plywood_content"]
+
+    const gallery_area = document.getElementById("gallery_container");
+
+    plywood_entries = []
+    for (let key of Object.keys(jsonData)) {
+        let chapter_of_html = key
+        var template_heading = document.querySelector("[heading-template]");
+        var my_heading = template_heading.content.cloneNode(true);
+        my_heading.querySelector("h2").innerHTML = chapter_of_html;
+        gallery_area.appendChild(my_heading);
+
+        let chapter_content = jsonData[key]
+        for (const chap_element of chapter_content) {
+            let path_of_example = chap_element["image_path"]
+            let codeblock_of_example = chap_element["code"]
+            let css_of_example = chap_element["css"]
+
+            var template_entry = document.querySelector("[gallery-item-template]");
+            var my_entry = template_entry.content.cloneNode(true);
+            let my_img = my_entry.querySelector(".gallery_entry") // why this?
+            my_img.style = css_of_example;
+            my_img.ref_style = css_of_example;
+            my_img.src = path_of_example;
+            my_img.dataset.code = codeblock_of_example;
+            gallery_area.appendChild(my_img);
+            plywood_entries.push({ codesnip: codeblock_of_example, img: my_img })
+
+        }
+    }
+
+    const searchInput = document.querySelector("[data-search]")
+
+    searchInput.addEventListener("input", e => {
+        const value = e.target.value.toLowerCase()
+
+        plywood_entries.forEach(pw_entry => {
+            const isVisible = pw_entry.codesnip.toLowerCase().includes(value)
+            console.log(isVisible)
+            if (!isVisible) {
+                pw_entry.img.style = "opacity:0.1";
+            }
+            if (isVisible) {
+                pw_entry.img.style = pw_entry.img.ref_style;
+                // pw_entry.img.style ="height:200px" // this line would have a nice folding effect
+
+            }
+
+
+        })
+    })
+</script>
 
 </html>
