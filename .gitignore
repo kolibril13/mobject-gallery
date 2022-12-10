@@ -135,5 +135,6 @@ dmypy.json
 
 
 mobject_env
+.venv11
 
 06_apple_emoji_NOT_INCLUDE.ipynb
