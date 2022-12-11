@@ -432,15 +432,19 @@
         for (const chap_element of chapter_content) {
             let path_of_example = chap_element["image_path"]
             let codeblock_of_example = chap_element["code"]
+            let c = codeblock_of_example
+            if (c.startsWith("        ")) {
+                c = c.replaceAll("        ", ""); // a bit hacky, but it works
+            }
             let css_of_example = chap_element["css"]
 
             var template_entry = document.querySelector("[gallery-item-template]");
             var my_entry = template_entry.content.cloneNode(true);
-            let my_img = my_entry.querySelector(".gallery_entry") // why this?
+            let my_img = my_entry.querySelector(".gallery_entry")
             my_img.style = css_of_example;
             my_img.ref_style = css_of_example;
             my_img.src = path_of_example;
-            my_img.dataset.code = codeblock_of_example;
+            my_img.dataset.code = c;
             gallery_area.appendChild(my_img);
             plywood_entries.push({ codesnip: codeblock_of_example, img: my_img })
 
