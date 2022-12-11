@@ -1,12 +1,13 @@
 
 # https://kolibril13.github.io/mobject-gallery/
-
 Gallery of manim mobjects.
 
-Roadmap draft:
+Formatting with:
+```
+python -m black  --line-length 999 --python-cell-magics capture_png gallery.ipynb
+```
+
+
 
 * add also examples for videos
-* better colors -> less intense yellow
-* new plywood architecture
 *  VS Code addon better plywood
-* better font

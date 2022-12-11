@@ -1,0 +1,7 @@
+project_name: Mobject Gallery
+repository_url: https://github.com/kolibril13/mobject-gallery
+user_content_version:  0.17.1 (Manim)
+description: |
+favicon: icon.png 
+preview_image: https://kolibril13.github.io/mobject-gallery/preview_image.png # prefered resolution 600x315, must be an url
+gallery_parameters_path: gallery_assets/gallery_parameters.json
