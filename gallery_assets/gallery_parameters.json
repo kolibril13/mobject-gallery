@@ -389,10 +389,10 @@
         "code": "%%manim $params\n\n\nclass Example(ZoomedScene):\n    def construct(self):\n        vals = [1, 3, 2, 5]  # HEREFROM\n        labels = [\n            \"foo\",\n            \"bar\",\n            \"foo3\",\n            \"foo2\",\n        ]\n        colors = [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\"]\n        bar = BarChart(\n            vals,\n            bar_colors=colors,\n            bar_names=labels,\n        )  # HERETO\n        self.add(bar)\n        self.camera.frame.scale(1 / 1.4)"
       },
       {
-        "image_path": "gallery_assets/Basic_Shapes_065_Light_change_default.png",
+        "image_path": "gallery_assets/Basic_Shapes_065_Light_mode.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;width:80px",
-        "code": "%%manim $params\n\n\nclass Example(ZoomedScene):\n    def construct(self):\n        self.camera.background_color = WHITE  # HEREFROM\n        Text.set_default(color=BLACK)\n        Line.set_default(color=YELLOW)\n        Line.set_default(stroke_width=20)\n\n        mob = Text(\"Light Mode\")\n        l = Line(2 * LEFT, 2 * RIGHT).next_to(mob, DOWN)\n        self.add(mob, l)\n\n        Line.set_default()\n        Text.set_default()  # HERETO\n        self.camera.frame.scale(1 / 4)"
+        "code": "%%manim $params\n\nconfig.background_color = WHITE\nText.set_default(color=BLACK)\nLine.set_default(color=YELLOW)\nLine.set_default(stroke_width=20)\nclass Example(ZoomedScene):\n    def construct(self):\n        # self.camera.background_color = WHITE  # alternative way.\n        mob = Text(\"Light Mode\")\n        l = Line(2 * LEFT, 2 * RIGHT).next_to(mob, DOWN)\n        self.add(mob, l)\n        Line.set_default()\n        Text.set_default()\n        self.camera.frame.scale(1 / 4)"
       }
     ],
     "Text": [
