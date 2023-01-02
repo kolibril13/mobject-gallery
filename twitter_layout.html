@@ -5,37 +5,60 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- HTML Meta Tags -->
-    <title>Mobject Gallery</title>
-    <meta name="description" content="">
-    
+    <title>Functions</title>
+    <meta name="description" content="Cheat sheet gallery for mathematical functions
+">
+
 
     <!-- OpenGraph Meta Tags -->
-    <meta property="og:url" content="https://github.com/kolibril13/mobject-gallery">
+    <meta property="og:url" content="https://github.com/kolibril13/plywood-gallery-functions">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Mobject Gallery">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="https://kolibril13.github.io/mobject-gallery/preview_image.png">
+    <meta property="og:title" content="Functions">
+    <meta property="og:description" content="Cheat sheet gallery for mathematical functions
+">
+    <meta property="og:image" content="https://kolibril13.github.io/plywood-gallery-functions/preview_image.png">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="kolibril13.github.io">
-    <meta property="twitter:url" content="https://github.com/kolibril13/mobject-gallery">
-    <meta name="twitter:title" content="Mobject Gallery">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="https://kolibril13.github.io/mobject-gallery/preview_image.png">
+    <meta property="twitter:url" content="https://github.com/kolibril13/plywood-gallery-functions">
+    <meta name="twitter:title" content="Functions">
+    <meta name="twitter:description" content="Cheat sheet gallery for mathematical functions
+">
+    <meta name="twitter:image" content="https://kolibril13.github.io/plywood-gallery-functions/preview_image.png">
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-        
+
 
 
 
     <link rel="icon" type="image/x-icon" href="icon.png">
     <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-    <!-- <link rel="stylesheet" href="styles.css"> comming soon!! -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
-    <!-- <script src="script.js" defer></script> comming soon!! -->
+    <script>
+        hljs.highlightAll();
+        function display_code_from_gallery_cell(imgs) {
+            var name = imgs.dataset.code;
+            document.getElementById("code_snippet").innerHTML = name
+            hljs.highlightAll();
+        }
+        // rest the code content block to an empty paragraph 
+        function reset_content() {
+            document.getElementById("code_snippet").innerHTML = "<p> <br></p>" //maybe better solution possible?
+            hljs.highlightAll();
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.keyCode === 27) {
+                // 27 means Esc key is pressed
+                reset_content();
+            }
+            return;
+        });
+
+    </script>
     <style>
         h1,
         h2 {
@@ -46,7 +69,7 @@
 
         .whole_page {
             margin: auto;
-            width: 840px;
+            width: 700px;
             border-left: 3px solid #d6c6bb;
             border-right: 3px solid #d6c6bb;
 
@@ -62,7 +85,7 @@
             /* there is probably a better way to do this  */
             border: 0;
             z-index: 2;
-            font-size: 10px;
+            font-size: 15px;
             position: sticky;
             top: 0;
 
@@ -72,14 +95,15 @@
         .container_code .python {
             border-radius: 8px;
             position: relative;
+            font-size: 15px;
             z-index: 2;
             width: 600px;
         }
 
         .container_code .close_button {
             position: absolute;
-            top: 17px;
-            right: -14px;
+            top: 24px;
+            right: -20px;
             z-index: 3;
 
         }
@@ -99,7 +123,7 @@
         }
 
         /* .gallery_container{
-} */
+        } */
 
         .gallery_entry {
             opacity: 1;
@@ -137,10 +161,6 @@
         }
 
         .container_info .info_github_icon {
-            font-size: 36px
-        }
-
-        .container_info .info_search_icon {
             font-size: 36px
         }
 
@@ -294,21 +314,27 @@
         <div class="container_code">
             <!-- maybe better html indention possible for this pre block?  -->
             <pre>
-<b>Code:</b>
+<b><span style="font-size: 25;">Code:</span></b>
 <code class="python" id="code_snippet"> <br> </code>
 </pre> <!-- better naming of these divs here-->
             <div class='close_button'>
-                <button type="button" onclick="resetContent(this)">X</button>
+                <button type="button" onclick="reset_content()">X</button>
             </div>
         </div>
         <div>
             <br><br><br><br><br><br><br><br>
             <!-- TODO This can be done better with a fixed length -->
         </div>
+        <div class="githublink">
+            <i style="font-size:30px" class="fa fa-search"></i>
+            <div style="display:inline;">
+                <input style="font-size:30px;" type="search" id="search" autocomplete="off" data-search>
+            </div>
+        </div>
         <div id="gallery_container">
             <template gallery-item-template>
                 <img class='gallery_entry' src='' data-code='' style='width: auto;'
-                    onclick='displayCode(this);'>
+                    onclick='display_code_from_gallery_cell(this);'>
             </template>
 
             <template heading-template>
@@ -318,79 +344,32 @@
 
             </template>
         </div>
-        <div class="container_info">
-            <table>
-                <tr>
-                    <td class="info_github_icon">
-                        <div class="tooltip">
-                            <div class="githublink">
-                                <i class="fa fa-github"></i>
-                            </div>
-                            <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
-                            <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
-                                Links to GitHub repos on the right.
-                            </div>
-                        </div>
-                    </td>
-                    <td class="info_version">
-                        <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
-                                href="https://github.com/kolibril13/mobject-gallery"><span
-                                    class="tooltip">user content v0.17.1 (Manim) </span></a><br></p>
-
-                        <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
-                                href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">
-                                    plywood core v0.0.12</span></a></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info_search_icon">
-                        <div class="tooltip">
-                            <div class="githublink">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <!-- TODO: This tooltip needs to be adjusted in a better way, should not be hard-coded! -->
-                            <div class="tooltiptext" style="padding:5px; width: 160px; margin-left:-130px">
-                                Search for keywords in gallery.
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="search" id="search" autocomplete="off" data-search>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        
     </div>
 </body>
 
 <script>
-    const codeSnippet = document.getElementById("code_snippet")
-
     hljs.highlightAll();
-    function displayCode(imgs) {
-        // Escape the HTML
-        codeSnippet.innerHTML = new Option(imgs.dataset.code).innerHTML
-        
+    function display_code_from_gallery_cell(imgs) {
+        var name = imgs.dataset.code;
+        document.getElementById("code_snippet").innerHTML = name
         hljs.highlightAll();
     }
-
     // rest the code content block to an empty paragraph 
-    function resetContent(imgs) {
-        code_snippet.innerHTML = "<p> <br> </p>" // Reset the text content
-
+    function reset_content(imgs) {
+        document.getElementById("code_snippet").innerHTML = "<p> <br></p>" //maybe better solution possible?
         hljs.highlightAll();
     }
 
-    const request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
     request.open("GET", "gallery_assets/gallery_parameters.json", false);
     request.send(null);
-    const jsonData = JSON.parse(request.responseText)["plywood_content"];
+    let json_content_all = JSON.parse(request.responseText);
+    jsonData = json_content_all["plywood_content"]
 
     const gallery_area = document.getElementById("gallery_container");
 
-    const plywoodEntries = []
+    plywood_entries = []
     for (let key of Object.keys(jsonData)) {
         let chapter_of_html = key
         var template_heading = document.querySelector("[heading-template]");
@@ -416,7 +395,7 @@
             my_img.src = path_of_example;
             my_img.dataset.code = c;
             gallery_area.appendChild(my_img);
-            plywoodEntries.push({ codesnip: codeblock_of_example, img: my_img })
+            plywood_entries.push({ codesnip: codeblock_of_example, img: my_img })
 
         }
     }
@@ -426,7 +405,7 @@
     searchInput.addEventListener("input", e => {
         const value = e.target.value.toLowerCase()
 
-        plywoodEntries.forEach(pw_entry => {
+        plywood_entries.forEach(pw_entry => {
             const isVisible = pw_entry.codesnip.toLowerCase().includes(value)
             console.log(isVisible)
             if (!isVisible) {
