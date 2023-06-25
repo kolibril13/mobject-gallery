@@ -414,6 +414,13 @@
     const codeSnippet = document.getElementById("code_snippet")
 
     hljs.highlightAll();
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            resetContent();
+        }
+    });
+
     function displayCode(imgs) {
         // Escape the HTML
         codeSnippet.innerHTML = new Option(imgs.dataset.code).innerHTML
